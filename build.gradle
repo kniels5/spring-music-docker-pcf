@@ -146,7 +146,7 @@ nexus {
 uploadArchives {
     repositories.mavenDeployer {
         repository(url: 'http://172.16.118.132:8081/nexus/content/repositories/snapshots') {
-            authentication (username: admin, password: admin)
+            authentication (username: 'admin', password: 'admin')
         }
     }
 }
