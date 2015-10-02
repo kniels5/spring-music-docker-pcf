@@ -6,7 +6,7 @@ apply plugin: 'com.bmuschko.nexus'
 //apply plugin: 'war'
 //apply plugin: 'cloudfoundry'
 
-version = 1.0
+version = $buildNumber
 
 def currentJvm = org.gradle.internal.jvm.Jvm.current()
     
