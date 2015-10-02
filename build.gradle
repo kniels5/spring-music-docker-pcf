@@ -136,7 +136,7 @@ extraArchive {
     javadoc = false
 }
 nexus {
-    sign = true
+    sign = false
     snapshotRepositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/snapshots/'
     repositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/releases/'
     
