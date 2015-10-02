@@ -145,7 +145,7 @@ nexus {
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
 uploadArchives {
     repositories.mavenDeployer {
-        repository(url: http://172.16.118.132:8081/nexus/content/repositories/snapshots) {
+        repository(url: 'http://172.16.118.132:8081/nexus/content/repositories/snapshots') {
             authentication (username: admin, password: admin)
         }
     }
