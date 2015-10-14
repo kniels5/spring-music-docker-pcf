@@ -1,6 +1,6 @@
 # Apache Tomcat image with build artifact
 
-FROM tomcat:latest
+FROM tomcat:DFS8.0
 
 MAINTAINER Keith Nielsen <keithnielsen@discover.com>
 
@@ -12,7 +12,7 @@ MAINTAINER Keith Nielsen <keithnielsen@discover.com>
 ENV NEXUS_REPO http://172.16.118.132:8081/nexus/content/repositories/releases
 
 # This will be injected by Jenkins build job as it builds and deploys the app container
-ENV APP_FILE_NAME
+ENV APP_FILE_NAME spring-music-13.war
 
 # Install wget and use it to install the application in the file system
 RUN apt-get update -y && \
