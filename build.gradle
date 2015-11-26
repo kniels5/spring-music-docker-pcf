@@ -49,6 +49,8 @@ repositories {
     maven { url 'http://repo.spring.io/release' }
     maven { url 'http://repo.spring.io/milestone' }
     mavenCentral()
+    maven { url "https://localhost:9443/nexus/content/groups/public" }
+
 }
 
 dependencies {
@@ -135,18 +137,18 @@ extraArchive {
     tests = false
     javadoc = false
 }
-nexus {
-    sign = false
-    snapshotRepositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/snapshots/'
-    repositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/releases/'
+//nexus {
+//    sign = false
+//    snapshotRepositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/snapshots/'
+//    repositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/releases/'
     
 }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
-//uploadArchives {
-//    repositories.mavenDeployer {
-//        repository(url: 'http://172.16.118.132:8081/nexus/content/repositories/snapshots') {
-//            authentication (username: 'admin', password: 'admin')
-//        }
-//    }
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: 'https://localhost:9443/nexus/content/repositories/snapshots') {
+            authentication (username: 'keithnielsen', password: 'zaz9oo')
+        }
+}
 //}
