@@ -142,7 +142,7 @@ extraArchive {
 //    snapshotRepositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/snapshots/'
 //    repositoryUrl = 'http://172.16.118.132:8081/nexus/content/repositories/releases/'
     
-}
+// }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
 uploadArchives {
