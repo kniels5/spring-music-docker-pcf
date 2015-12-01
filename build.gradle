@@ -149,10 +149,10 @@ jar {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "${nexusUrl}/repository/keith-test") {
+            repository(url: "${nexusUrl}/repository/keith-test/") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
-            snapshotRepository(url: "${nexusUrl}/repository/keith-test") {
+            snapshotRepository(url: "${nexusUrl}/repository/keith-test/") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             } 
         }
