@@ -150,5 +150,5 @@ uploadArchives {
         repository(url: 'https://localhost:9443/nexus/content/repositories/snapshots') {
             authentication (username: 'keithnielsen', password: 'zaz9oo')
         }
-}
+    }
 }
