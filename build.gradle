@@ -3,7 +3,7 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 apply plugin: 'com.bmuschko.tomcat'
 apply plugin: 'com.bmuschko.nexus'
-apply plugin: 'war'
+//apply plugin: 'war'
 apply plugin: 'cloudfoundry'
 apply plugin: 'maven'
 
