@@ -141,18 +141,18 @@ jar {
 //}
 //nexus {
 //    sign = false
-//    snapshotRepositoryUrl = 'http://52.33.25.230:8084/repository/maven-snapshots/'
-//    repositoryUrl = 'http://52.33.25.230:8084/repository/maven-releases/'
+//    snapshotRepositoryUrl = 'http://52.33.25.230:8084/repository/keith-test/'
+//    repositoryUrl = 'http://52.33.25.230:8084/repository/keith-test/'
 //    }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "${nexusUrl}/repository/maven-releases") {
+            repository(url: "${nexusUrl}/repository/keith-test") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
-            snapshotRepository(url: "${nexusUrl}/repository/snapshots") {
+            snapshotRepository(url: "${nexusUrl}/repository/keith-test") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             } 
         }
