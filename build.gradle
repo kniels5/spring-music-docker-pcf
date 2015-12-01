@@ -139,14 +139,14 @@ extraArchive {
 }
 nexus {
     sign = false
-    snapshotRepositoryUrl = 'https://localhost:9443/nexus/content/repositories/snapshots'
-    repositoryUrl = 'https://localhost:9443/nexus/content/repositories/snapshots/releases/'
+    snapshotRepositoryUrl = 'https://localhost:8443/nexus/content/repositories/snapshots'
+    repositoryUrl = 'https://localhost:8443/nexus/content/repositories/snapshots/releases/'
     }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
 //uploadArchives {
 //    repositories.mavenDeployer {
-//        repository(url: 'https://localhost:9443/nexus/content/repositories/snapshots') {
+//        repository(url: 'https://localhost:8443/nexus/content/repositories/snapshots') {
 //            authentication (userName: 'keithnielsen', password: 'zaz9oo')
 //        }
 //    }
