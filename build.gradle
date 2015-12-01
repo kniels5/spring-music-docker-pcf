@@ -49,7 +49,8 @@ repositories {
     maven { url 'http://repo.spring.io/release' }
     maven { url 'http://repo.spring.io/milestone' }
     mavenCentral()
-    maven { url "https://localhost:9443/nexus/content/groups/public" }
+    maven { url "https://52.33.25.230:8443/nexus/content/groups/public" }
+    //maven { url "https://localhost:9443/nexus/content/groups/public" }
 
 }
 
