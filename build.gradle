@@ -139,8 +139,8 @@ extraArchive {
 }
 nexus {
     sign = false
-    snapshotRepositoryUrl = 'https://localhost:8443/nexus/content/repositories/snapshots'
-    repositoryUrl = 'https://localhost:8443/nexus/content/repositories/snapshots/releases/'
+    snapshotRepositoryUrl = 'https://localhost:8443/repository/maven-snapshots/'
+    repositoryUrl = 'https://localhost:8443/repository/maven-releases/'
     }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
