@@ -2,9 +2,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 apply plugin: 'com.bmuschko.tomcat'
-apply plugin: 'com.bmuschko.nexus'
-//apply plugin: 'war'
-//apply plugin: 'cloudfoundry'
+//apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'war'
+apply plugin: 'cloudfoundry'
 
 version = project.buildNumber
 
@@ -40,7 +40,7 @@ buildscript {
     dependencies {
         classpath "com.bmuschko:gradle-tomcat-plugin:2.2.2"
         classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.1'
-        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+        //classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
     }
 }
 
@@ -49,7 +49,7 @@ repositories {
     maven { url 'http://repo.spring.io/release' }
     maven { url 'http://repo.spring.io/milestone' }
     mavenCentral()
-    maven { url "https://52.33.25.230:8084/nexus/content/groups/public" }
+    maven { url "${nexusUrl}/content/groups/public" }
     //maven { url "https://localhost:8084/nexus/content/groups/public" }
 
 }
@@ -138,17 +138,20 @@ extraArchive {
     tests = false
     javadoc = false
 }
-nexus {
-    sign = false
-    snapshotRepositoryUrl = 'http://52.33.25.230:8084/repository/maven-snapshots/'
-    repositoryUrl = 'http://52.33.25.230:8084/repository/maven-releases/'
-    }
+//nexus {
+//    sign = false
+//    snapshotRepositoryUrl = 'http://52.33.25.230:8084/repository/maven-snapshots/'
+//    repositoryUrl = 'http://52.33.25.230:8084/repository/maven-releases/'
+//    }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
-//uploadArchives {
-//    repositories.mavenDeployer {
-//        repository(url: 'https://localhost:8443/nexus/content/repositories/snapshots') {
-//            authentication (userName: 'keithnielsen', password: 'zaz9oo')
-//        }
-//    }
-//}
+uploadArchives {
+    repositories.mavenDeployer {
+       repository(url: "${nexusUrl}/repository/maven-releases") {
+            authentication(userName: nexusUsername, password: nexusPassword)
+        }
+       snapshotRepository(url: "${nexusUrl}/repository/snapshots") {
+            authentication(userName: nexusUsername, password: nexusPassword)
+        } 
+    }
+}
