@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
-apply plugin: 'com.bmuschko.tomcat'
+//apply plugin: 'com.bmuschko.tomcat'
 //apply plugin: 'com.bmuschko.nexus'
 //apply plugin: 'war'
 apply plugin: 'cloudfoundry'
@@ -39,7 +39,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.bmuschko:gradle-tomcat-plugin:2.2.2"
+        //classpath "com.bmuschko:gradle-tomcat-plugin:2.2.2"
         classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.1'
         //classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
     }
