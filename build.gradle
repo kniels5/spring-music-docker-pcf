@@ -124,8 +124,8 @@ task wrapper(type: Wrapper) {
 
 //creates a jar from the compile
 war {
-    baseName = $(archivesBaseName)
-    version = $(version)
+    baseName = ${archivesBaseName}
+    version = ${version}
     destinationDir = new File('build/distributions/')
 }
 
@@ -152,9 +152,9 @@ uploadArchives {
             snapshotRepository(url: "${nexusUrl}/repository/keith-test/") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
-            pom.version = $(version)
-            pom.artifactId = $(archivesBaseName)
-            pom.groupId = $(archivesBaseName)
+            pom.version = ${version}
+            pom.artifactId = ${archivesBaseName}
+            pom.groupId = ${archivesBaseName}
         }
     }    
 }
