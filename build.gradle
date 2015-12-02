@@ -133,10 +133,10 @@ war {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "${nexusUrl}/repository/keith-test/") {
+            repository(url: "${nexusUrl}/repository/maven-releases/") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
-            snapshotRepository(url: "${nexusUrl}/repository/keith-test/") {
+            snapshotRepository(url: "${nexusUrl}/repository/maven-snapshots/") {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
             pom.version = "${version}"
