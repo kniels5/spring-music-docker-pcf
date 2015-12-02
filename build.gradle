@@ -123,14 +123,10 @@ task wrapper(type: Wrapper) {
 }
 
 //creates a jar from the compile
-jar {
-    manifest {
-        attributes \
-            'Implementation-Title': 'Spring Music on Docker', \
-            'Implementation-Version': version
-    }
-    
-    version = ''
+war {
+    baseName = $(archiveBaseName)
+    version = $(version)
+    destinationDir = new File('build/distributions/')
 }
 
 //using the nexus gradle plugin as a test
@@ -145,6 +141,7 @@ jar {
 //    repositoryUrl = 'http://52.33.25.230:8084/repository/keith-test/'
 //    }
 
+
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
 uploadArchives {
     repositories {
@@ -154,7 +151,10 @@ uploadArchives {
             }
             snapshotRepository(url: "${nexusUrl}/repository/keith-test/") {
                 authentication(userName: nexusUsername, password: nexusPassword)
-            } 
+            }
+            pom.version = $(version)
+            pom.artifactId = $(archiveBaseName)
+            pom.groupId = $(archiveBaseName)
         }
     }    
 }
