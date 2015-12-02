@@ -129,19 +129,6 @@ war {
     destinationDir = new File('build/distributions/')
 }
 
-//using the nexus gradle plugin as a test
-//extraArchive {
-  //  sources = false
-//    tests = false
-//    javadoc = false
-//}
-//nexus {
-//    sign = false
-//    snapshotRepositoryUrl = 'http://52.33.25.230:8084/repository/keith-test/'
-//    repositoryUrl = 'http://52.33.25.230:8084/repository/keith-test/'
-//    }
-
-
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
 uploadArchives {
     repositories {
