@@ -124,7 +124,7 @@ task wrapper(type: Wrapper) {
 
 //creates a jar from the compile
 war {
-    baseName = $(archiveBaseName)
+    baseName = $(archivesBaseName)
     version = $(version)
     destinationDir = new File('build/distributions/')
 }
@@ -153,8 +153,8 @@ uploadArchives {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
             pom.version = $(version)
-            pom.artifactId = $(archiveBaseName)
-            pom.groupId = $(archiveBaseName)
+            pom.artifactId = $(archivesBaseName)
+            pom.groupId = $(archivesBaseName)
         }
     }    
 }
