@@ -126,7 +126,8 @@ task wrapper(type: Wrapper) {
 war {
     baseName = "${archivesBaseName}"
     version = "${version}"
-    destinationDir = new File('build/distributions/')
+   // destinationDir = new File('build/distributions/')
+   desitnationDir = new File("${buildDistributionLocation}")
 }
 
 //alternative to the nexus plugin, uploades any archives, called via upload in jenkins
