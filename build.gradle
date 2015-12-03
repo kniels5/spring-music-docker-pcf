@@ -40,7 +40,7 @@ buildscript {
 
     dependencies {
         classpath "com.bmuschko:gradle-tomcat-plugin:2.2.2"
-        classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.1'
+        classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.2'
         //classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
     }
 }
@@ -145,4 +145,16 @@ uploadArchives {
             pom.groupId = "${archivesBaseName}"
         }
     }    
+}
+cloudfoundry{
+    target = "https://api.system.raorow.com"
+    org = "entarch-org"
+    space = "development"
+    username = cfUserName
+    password = cfPassword
+    application = "spring-music"
+    memory= 512
+    instances = 1
+    trustSelfSignedCerts = "true"
+    file = war.outputFile
 }
