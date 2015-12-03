@@ -150,11 +150,11 @@ cloudfoundry{
     target = "https://api.system.raorow.com"
     org = "entarch-org"
     space = "development"
-    username = cfUserName
-    password = cfPassword
+    username = ${cfUserName}
+    password = ${cfPassword}
     application = "spring-music"
     memory= 512
     instances = 1
     trustSelfSignedCerts = "true"
-    file = war.outputFile
+    file = file(${destinationDir}/${archiveBaseName}+ "-" + ${version} + ".war")
 }
