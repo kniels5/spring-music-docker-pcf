@@ -156,5 +156,5 @@ cloudfoundry{
     memory= 512
     instances = 1
     trustSelfSignedCerts = "true"
-    file = file("${buildDistributionLocation}"+"${archiveBaseName}"+ "-" + "${version}" + ".war")
+    file = file("${buildDistributionLocation}"+"${archivesBaseName}"+ "-" + "${version}" + ".war")
 }
