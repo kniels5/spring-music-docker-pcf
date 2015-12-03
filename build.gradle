@@ -148,7 +148,7 @@ uploadArchives {
 }
 cloudfoundry{
     target = "https://api.system.raorow.com"
-    org = "entarch-org"
+    organization = "entarch-org"
     space = "development"
     username = ${cfUserName}
     password = ${cfPassword}
