@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <Parameter name="spring.profiles.active" value="mongodb"
+    <Parameter name="spring.profiles.active" value="in-memory"
                override="false"/>
 </Context>
