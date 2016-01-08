@@ -1,0 +1,17 @@
+#######################################################################################################
+#
+# title:       Docker/AWS ECS Compose YAML file for spring-music
+# author:      Keith Nielsen (keithnielsen68@gmail.com)
+# url:         https://github.com/kniels5/spring-music-docker.git  
+# description: Takes Spring-Music Docker image and pushes to ECS via ECS CLI
+# to run:      ecs-cli compose --file spring-music-compose.yml up (Should work with Docker Compose)
+# 
+#######################################################################################################
+
+spring-music-docker:
+  image: docker/
+  expose:
+   - "8080"
+  ports:
+   - "8180:8080"
+  hostname: "spring-music-docker"
