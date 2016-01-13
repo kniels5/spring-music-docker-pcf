@@ -13,5 +13,5 @@ spring-music-docker:
   expose:
    - "8080"
   ports:
-   - "8180:8080"
+   - "8087:8080"
   hostname: "spring-music-docker"
