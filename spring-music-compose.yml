@@ -10,8 +10,6 @@
 
 spring-music-docker:
   image: localhost:18444/dfs/spring-music-docker:latest
-  expose:
-   - "8080"
   ports:
    - "8087:8080"
   user: root 
